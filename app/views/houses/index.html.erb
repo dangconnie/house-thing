@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Houses</h1>
+
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zipcode</th>
+      <th>Bedroom</th>
+      <th>Bath</th>
+      <th>Garage</th>
+      <th>Basement</th>
+      <th>Sqft</th>
+      <th>Price</th>
+      <th>Age</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @houses.each do |house| %>
+      <tr scope="row">
+        <td><%= house.title %></td>
+        <td><%= house.description %></td>
+        <td><%= house.address %></td>
+        <td><%= house.city %></td>
+        <td><%= house.state %></td>
+        <td><%= house.zipcode %></td>
+        <td><%= house.bedroom %></td>
+        <td><%= house.bath %></td>
+        <td><%= house.garage %></td>
+        <td><%= house.basement %></td>
+        <td><%= house.sqft %></td>
+        <td><%= house.price %></td>
+        <td><%= house.age %></td>
+        <td><%= link_to 'Show', house %></td>
+        <td><%= link_to 'Edit', edit_house_path(house) %></td>
+        <td><%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New House', new_house_path %>
